@@ -24,7 +24,11 @@ export default function App() {
 
   let element = useRoutes(routes);
 
-  return <div>{element}</div>;
+  return <div className="App">{element}
+  
+  <img src="assets/shoe-color.png" alt="res"/>
+  
+  </div>;
 }
 
 function Layout() {
