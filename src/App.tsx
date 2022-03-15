@@ -34,7 +34,7 @@ export default function App() {
 function Layout() {
   return (
     <div>
-      <nav>
+      {/* <nav>
         <ul>
           <li>
             <Link to="/">Demo1111</Link>
@@ -48,7 +48,7 @@ function Layout() {
         </ul>
       </nav>
 
-      <hr />
+      <hr /> */}
 
       <Outlet />
     </div>
