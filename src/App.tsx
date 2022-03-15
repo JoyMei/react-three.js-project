@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { RouteObject } from "react-router-dom";
-import { Outlet, Link, useRoutes, useParams } from "react-router-dom";
+import { Outlet, Link, useRoutes } from "react-router-dom";
 
 export default function App() {
   let routes: RouteObject[] = [
@@ -8,27 +8,23 @@ export default function App() {
       path: "/",
       element: <Layout />,
       children: [
-        { index: true, element: <Home /> },
+        { index: true, element: <Demo1 /> },
         {
-          path: "/courses",
-          element: <Courses />,
-          children: [
-            { index: true, element: <CoursesIndex /> },
-            { path: "/courses/:id", element: <Course /> },
-          ],
+          path: "/demo2",
+          element: <Demo2 />,
         },
-        { path: "*", element: <NoMatch /> },
+        {
+          path: "/error",
+          element: <Error />,
+        },
+        { path: "*", element: <Error /> },
       ],
     },
   ];
 
   let element = useRoutes(routes);
 
-  return (
-    <div>
-      {element}
-    </div>
-  );
+  return <div>{element}</div>;
 }
 
 function Layout() {
@@ -37,13 +33,13 @@ function Layout() {
       <nav>
         <ul>
           <li>
-            <Link to="/">Home</Link>
+            <Link to="/">Demo1111</Link>
           </li>
           <li>
-            <Link to="/courses">Courses</Link>
+            <Link to="/demo2">Demo2</Link>
           </li>
           <li>
-            <Link to="/nothing-here">Nothing Here</Link>
+            <Link to="/error">Error</Link>
           </li>
         </ul>
       </nav>
@@ -55,66 +51,24 @@ function Layout() {
   );
 }
 
-function Home() {
+function Demo1() {
   return (
     <div>
-      <h2>Home</h2>
+      <h2>Demo1111111111111</h2>
     </div>
   );
 }
 
-function Courses() {
+function Demo2() {
   return (
     <div>
-      <h2>Courses</h2>
+      <h2>Demo22222</h2>
       <Outlet />
     </div>
   );
 }
 
-function CoursesIndex() {
-  return (
-    <div>
-      <p>Please choose a course:</p>
-
-      <nav>
-        <ul>
-          <li>
-            <Link to="react-fundamentals">React Fundamentals</Link>
-          </li>
-          <li>
-            <Link to="advanced-react">Advanced React</Link>
-          </li>
-          <li>
-            <Link to="react-router">React Router</Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  );
-}
-
-function Course() {
-  let { id } = useParams<"id">();
-
-  return (
-    <div>
-      <h2>
-        Welcome to the {id!.split("-").map(capitalizeString).join(" ")} course!
-      </h2>
-
-      <p>This is a great course. You're gonna love it!</p>
-
-      <Link to="/courses">See all courses</Link>
-    </div>
-  );
-}
-
-function capitalizeString(s: string): string {
-  return s.charAt(0).toUpperCase() + s.slice(1);
-}
-
-function NoMatch() {
+function Error() {
   return (
     <div>
       <h2>It looks like you're lost...</h2>
