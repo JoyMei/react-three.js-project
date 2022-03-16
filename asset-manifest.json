@@ -1,18 +1,20 @@
 {
   "files": {
-    "main.css": "/react-three.js-project/static/css/main.e2aa9cde.css",
-    "main.js": "/react-three.js-project/static/js/main.c7477ea0.js",
+    "main.css": "/react-three.js-project/static/css/main.c9120edb.css",
+    "main.js": "/react-three.js-project/static/js/main.9d83794f.js",
     "static/js/787.5fb3db4f.chunk.js": "/react-three.js-project/static/js/787.5fb3db4f.chunk.js",
     "static/media/yellow-ball.png": "/react-three.js-project/static/media/yellow-ball.8fe8f1d4460151565197.png",
+    "static/media/baked-02.jpeg": "/react-three.js-project/static/media/baked-02.552afb830429b6e02611.jpeg",
     "static/media/threejs-journey.png": "/react-three.js-project/static/media/threejs-journey.52477529f076554fc6bf.png",
     "static/media/shoe-color.png": "/react-three.js-project/static/media/shoe-color.9186747b05c4eb7a4d69.png",
+    "static/media/portal-2.glb": "/react-three.js-project/static/media/portal-2.84f40573359a365ac5aa.glb",
     "index.html": "/react-three.js-project/index.html",
-    "main.e2aa9cde.css.map": "/react-three.js-project/static/css/main.e2aa9cde.css.map",
-    "main.c7477ea0.js.map": "/react-three.js-project/static/js/main.c7477ea0.js.map",
+    "main.c9120edb.css.map": "/react-three.js-project/static/css/main.c9120edb.css.map",
+    "main.9d83794f.js.map": "/react-three.js-project/static/js/main.9d83794f.js.map",
     "787.5fb3db4f.chunk.js.map": "/react-three.js-project/static/js/787.5fb3db4f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2aa9cde.css",
-    "static/js/main.c7477ea0.js"
+    "static/css/main.c9120edb.css",
+    "static/js/main.9d83794f.js"
   ]
 }
