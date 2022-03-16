@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  background: linear-gradient(-45deg, #e73c7e, #9607e9, #23a6d5, #23d5ab, #7c64e6, #e412f7);
+  background-size: 100% 100%;
+  animation: gradient 15s ease infinite;
+  min-height: 100vh;
+}
+
+.Layout {
+  width: 100vw;
+  height: 100vh;
+}

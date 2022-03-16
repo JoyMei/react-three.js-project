@@ -5,7 +5,7 @@ import Projects from "./pages/Projects"
 import YellowBall from "./projects/yellow-ball/index";
 import ShoeColor from "./projects/shoe-color/index";
 import ThreejsJourney from "./projects/threejs-journey/index";
-import "./App.css"
+import "./App.scss"
 
 export default function App() {
   let routes: RouteObject[] = [

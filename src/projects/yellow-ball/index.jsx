@@ -6,61 +6,57 @@ import Loading from "../Loading";
 
 export default function YellowBall() {
   return (
-
-    <div className="yellow-ball"
-    >
-
-
-
-    <Suspense fallback={<Loading />}>
-      <Canvas
-        shadows
-        gl={{ stencil: false, antialias: false }}
-        camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}
-      >
-        <fog attach="fog" args={["red", 25, 35]} />
-        <color attach="background" args={["#ffdd41"]} />
-        <ambientLight intensity={1.5} />
-        <directionalLight position={[-10, -10, -5]} intensity={0.5} />
-        <directionalLight
-          castShadow
-          intensity={4}
-          position={[50, 50, 25]}
-          shadow-mapSize={[256, 256]}
-          shadow-camera-left={-10}
-          shadow-camera-right={10}
-          shadow-camera-top={10}
-          shadow-camera-bottom={-10}
-        />
-        <Physics
-          gravity={[0, -50, 0]}
-          defaultContactMaterial={{ restitution: 0.5 }}
+    <div className="container">
+      <Suspense fallback={<Loading />}>
+        <Canvas
+          shadows
+          gl={{ stencil: false, antialias: false }}
+          camera={{ position: [0, 0, 20], fov: 50, near: 17, far: 40 }}
         >
-          <group position={[0, 0, -10]}>
-            <Mouse />
-            <Borders />
-            <InstancedSpheres />
-          </group>
-        </Physics>
-        <EffectComposer>
-          <SSAO
-            radius={0.4}
-            intensity={50}
-            luminanceInfluence={0.4}
-            color="red"
+          <fog attach="fog" args={["red", 25, 35]} />
+          <color attach="background" args={["#ffdd41"]} />
+          <ambientLight intensity={1.5} />
+          <directionalLight position={[-10, -10, -5]} intensity={0.5} />
+          <directionalLight
+            castShadow
+            intensity={4}
+            position={[50, 50, 25]}
+            shadow-mapSize={[256, 256]}
+            shadow-camera-left={-10}
+            shadow-camera-right={10}
+            shadow-camera-top={10}
+            shadow-camera-bottom={-10}
           />
-          <Bloom
-            intensity={1.25}
-            kernelSize={2}
-            luminanceThreshold={0.85}
-            luminanceSmoothing={0.0}
-          />
-        </EffectComposer>
-      </Canvas>
-    </Suspense>
+          <Physics
+            gravity={[0, -50, 0]}
+            defaultContactMaterial={{ restitution: 0.5 }}
+          >
+            <group position={[0, 0, -10]}>
+              <Mouse />
+              <Borders />
+              <InstancedSpheres />
+            </group>
+          </Physics>
+          <EffectComposer>
+            <SSAO
+              radius={0.4}
+              intensity={50}
+              luminanceInfluence={0.4}
+              color="red"
+            />
+            <Bloom
+              intensity={1.25}
+              kernelSize={2}
+              luminanceThreshold={0.85}
+              luminanceSmoothing={0.0}
+            />
+          </EffectComposer>
+        </Canvas>
+      </Suspense>
     </div>
   );
 }
+
 function InstancedSpheres({ count = 200 }) {
   const { viewport } = useThree();
   const [ref] = useSphere((index) => ({
