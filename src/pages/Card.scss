@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap");
+
+$header-font-family: "Montserrat";
+
+.card {
+  display: inline-block;
+  background: rgba(255, 255, 255, 1);
+  backdrop-filter: blur(25px);
+  width: 90%;
+  max-width: 20rem;
+  // min-height: 28rem;
+  margin: 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  overflow: hidden;
+  box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, 0.5);
+  transition: transform 0.1s ease-in-out, box-shadow 0.1s;
+  border-radius: 12px;
+  padding: 8px;
+  .image {
+    height: 100%;
+    border-radius: 12px;
+    display: block;
+    min-height: 160px;
+    overflow: hidden;
+    position: relative;
+    > img {
+      border-radius: 12px;
+      height: 180px;
+      object-fit: cover;
+      width: 100%;
+      display: block;
+      margin-bottom: 0;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      -ms-transition: all 0.25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out;
+      transition: all 0.25s ease-in-out;
+    }
+
+    &:hover > img {
+      -webkit-transform: scale(1.2);
+      -moz-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      -o-transform: scale(1.2);
+      transform: scale(1.2);
+      border-radius: 12px;
+    }
+  }
+
+  .title {
+    color: rgb(6, 24, 39);
+    font-size: 1.5em;
+    font-weight: 700;
+    line-height: 1.6em;
+    min-height: 5rem;
+    margin-top: 1rem;
+    display: inline-block;
+    font-family: $header-font-family;
+    text-decoration: none;
+    text-align: left;
+
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+
+    &:hover {
+      color: rgba(rgba(0, 162, 255, 0.89), 0.7);
+      text-decoration: none;
+    }
+  }
+}
+
+.card:hover {
+  transform: translateY(-0.5rem) scale(1.0125);
+  box-shadow: 0 0.5em 3rem -1rem rgba(0, 0, 0, 0.5);
+}

@@ -1,6 +1,11 @@
 import * as React from "react";
 import type { RouteObject } from "react-router-dom";
 import { Outlet, Link, useRoutes } from "react-router-dom";
+import Projects from "./pages/Projects"
+import YellowBall from "./projects/yellow-ball/index";
+import ShoeColor from "./projects/shoe-color/index";
+import ThreejsJourney from "./projects/threejs-journey/index";
+import "./App.css"
 
 export default function App() {
   let routes: RouteObject[] = [
@@ -8,10 +13,18 @@ export default function App() {
       path: "/",
       element: <Layout />,
       children: [
-        { index: true, element: <Demo1 /> },
+        { index: true, element: <Projects /> },
         {
-          path: "/demo2",
-          element: <Demo2 />,
+          path: "/yellow-ball",
+          element: <YellowBall />,
+        },
+        {
+          path: "/shoe-color",
+          element: <ShoeColor />,
+        },
+        {
+          path: "/journey",
+          element: <ThreejsJourney />,
         },
         {
           path: "/error",
@@ -24,53 +37,28 @@ export default function App() {
 
   let element = useRoutes(routes);
 
-  return <div className="App">{element}
-  
-  <img src="assets/shoe-color.png" alt="res"/>
-  
-  </div>;
+  return (
+    <div className="App">
+      {element}
+    </div>
+  );
 }
 
 function Layout() {
   return (
-    <div>
-      {/* <nav>
-        <ul>
-          <li>
-            <Link to="/">Demo1111</Link>
-          </li>
-          <li>
-            <Link to="/demo2">Demo2</Link>
-          </li>
-          <li>
-            <Link to="/error">Error</Link>
-          </li>
-        </ul>
-      </nav>
-
-      <hr /> */}
-
+    <div className="Layout">
       <Outlet />
     </div>
   );
 }
 
-function Demo1() {
-  return (
-    <div>
-      <h2>Demo1111111111111</h2>
-    </div>
-  );
-}
-
-function Demo2() {
-  return (
-    <div>
-      <h2>Demo22222</h2>
-      <Outlet />
-    </div>
-  );
-}
+// function Demo1() {
+//   return (
+//     <div>
+//       <h2>Demo1111111111111</h2>
+//     </div>
+//   );
+// }
 
 function Error() {
   return (
